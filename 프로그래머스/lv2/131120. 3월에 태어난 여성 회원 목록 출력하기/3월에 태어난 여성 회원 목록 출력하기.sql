@@ -1,9 +1,8 @@
--- 코드를 입력하세요
 SELECT
     member_id,
     member_name,
     gender,
-    date_format(date_of_birth, '%Y-%m-%d') AS date_of_birth
+    to_char(date_of_birth, 'yyyy-mm-dd') AS date_of_birth
 FROM member_profile
-WHERE date_format(date_of_birth, '%m') = 3 AND gender = 'w' AND tlno IS NOT NULL
+WHERE to_char(date_of_birth, 'mm') = '03' AND gender = 'W' AND tlno IS NOT NULL
 ORDER BY member_id ASC
